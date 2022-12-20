@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
+</head>
+<body>
+
+<h1 th:text="${movie.title}"></h1>
+<img th:src="'/images/' + ${movie.imageName} ">
+<h5>Pris: </h5>
+<span th:text="${movie.price}"></span>
+
+<h5>Beskrivning: </h5>
+<span th:text="${movie.description}"></span>
+
+<h1 th:text="${snacks.product}"></h1>
+<img th:src="'/images/' + ${snacks.imageName} ">
+<h5>Pris: </h5>
+<span th:text="${snacks.price}"></span>
+
+<h5>Beskrivning: </h5>
+<span th:text="${snacks.description}"></span>
+
+
+</body>
+</html>
