@@ -9,15 +9,22 @@
 </head>
 <body>
 
-    <span th:each="movie : ${movies}">
-        <a th:href= "'/movie/'+ ${movie.title}"> <img th:src="'/images/' + ${movie.imageName} "></a>
-    <span th:text="${movie.title}"></span>
-       </span>
-    <span th:each="snacks : ${snacks}">
-        <a th:href= "'/snacks/'+ ${snacks.product}"> <img th:src="'/images/' + ${snacks.imageName} "></a>
-    <span th:text="${snacks.product}"></span>
+<h2>Filmer</h2>
+<div class="movieMenu" th:each="movie : ${movies}">
 
-</span>
+    <div class="poster">
+        <a th:href= "'/movie/'+ ${movie.title}"> <img th:src="'/images/' + ${movie.imageName} "></a>
+    </div>
+    <span><p th:text="${movie.title}"></p></span>
+</div>
+
+<div class="candyMenu" th:each="snacks : ${snacks}">
+
+    <div class="poster">
+        <a th:href= "'/snacks/'+ ${snacks.product}"> <img th:src="'/images/' + ${snacks.imageName} "></a>
+    </div>
+    <p th:text="${snacks.product}"></p>
+</div>
 
 </body>
 </html>
