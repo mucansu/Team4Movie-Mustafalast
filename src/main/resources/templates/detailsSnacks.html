@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/newStyle.css" th:href="'/newStyle.css'">
 </head>
 <body>
 
-<h1 th:text="${snacks.product}"></h1>
-<img th:src="'/images/' + ${snacks.imageName} ">
+<h1 th:text="${snack.product}"></h1>
+<img th:src="'/images/' + ${snack.imageName} ">
 <h5>Pris: </h5>
-<span th:text="${snacks.price}"></span>
+<span th:text="${snack.snackPrice}"></span>
 
 <h5>Beskrivning: </h5>
-<span th:text="${snacks.description}"></span>
+<span th:text="${snack.description}"></span>
+
+<br>
+
+<a th:href="'/'"><button>startsida</button></a>
 
 </body>
 </html>
