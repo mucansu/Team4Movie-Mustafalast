@@ -53,6 +53,7 @@ public class MovieController {
         return "cart";
     }
 
+
     @PostMapping("/cart/addSnack")
     public String addSnackToCart(@RequestParam String product) {
         Snacks snack = repository2.getSnack(product);
