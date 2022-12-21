@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1 th:text="${snacks.product}"></h1>
+<img th:src="'/images/' + ${snacks.imageName} ">
+<h5>Pris: </h5>
+<span th:text="${snacks.price}"></span>
+
+<h5>Beskrivning: </h5>
+<span th:text="${snacks.description}"></span>
+
+</body>
+</html>

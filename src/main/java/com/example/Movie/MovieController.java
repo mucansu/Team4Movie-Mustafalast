@@ -27,12 +27,17 @@ public class MovieController {
     }
 
     @GetMapping("/movie/{imageName}")
-    String get1(Model model, @PathVariable String imageName){
+    String getmovie(Model model, @PathVariable String imageName){
         Movie movie = repository.getMovie(imageName);
-        Snacks snack = repository2.getSnack(imageName);
         model.addAttribute("movie",movie);
+        return "detailsMovie";
+    }
+
+    @GetMapping("/snacks/{imageName}")
+    String getsnacks(Model model, @PathVariable String imageName){
+        Snacks snack = repository2.getSnack(imageName);
         model.addAttribute("snack", snack);
-        return "details";
+        return "detailsSnacks";
     }
 
 }
