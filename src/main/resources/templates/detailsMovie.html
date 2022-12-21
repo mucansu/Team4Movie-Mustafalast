@@ -8,15 +8,19 @@
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
 </head>
 <body>
-
+<div>
 <h1 th:text="${movie.title}"></h1>
 <img th:src="'/images/' + ${movie.imageName} ">
+    <form action="/cart/addSnack" method="post">
+        <input type="hidden" th:value="${movie.title}" name="title">
+    <input type="submit" value="Lägg till film i varukorgen">
+    </form>
 <h5>Pris: </h5>
 <span th:text="${movie.price}"></span>
 
 <h5>Beskrivning: </h5>
 <span th:text="${movie.description}"></span>
-
+</div>
 
 </body>
 </html>
