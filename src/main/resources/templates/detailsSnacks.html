@@ -9,14 +9,20 @@
 </head>
 <body>
 
+
 <h1 th:text="${snack.product}"></h1>
 <img th:src="'/images/' + ${snack.imageName} ">
-<h5>Pris: </h5>
-<span th:text="${snack.snackPrice}"></span>
+<form method="post" action="/cart/addSnack">
+    <input type="hidden" th:value="${snack.product}" name="product">
+    <input type="submit" value="Lägg till i varukorgen">
+    </form>
+<h5>Pris:
+<span th:text="${snack.snackPrice}"></span> Kr </h5>
 
 <h5>Beskrivning: </h5>
 <span th:text="${snack.description}"></span>
-
+<br>
+<br>
 <br>
 
 <a th:href="'/'"><button>startsida</button></a>

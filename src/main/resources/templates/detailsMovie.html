@@ -11,11 +11,13 @@
 
 <h1 th:text="${movie.title}"></h1>
 <img th:src="'/images/' + ${movie.imageName} ">
-<h5>Pris: </h5>
-<span th:text="${movie.price}"></span>
+<h5>Pris:
+<span th:text="${movie.price}"></span> Kr</h5>
 
 <h5>Beskrivning: </h5>
-<span th:text="${movie.description}"></span>
+<span class="description" th:text="${movie.description}"></span>
+<br>
+<br>
 <br>
 
 <a th:href="'/'"><button>startsida</button></a>
