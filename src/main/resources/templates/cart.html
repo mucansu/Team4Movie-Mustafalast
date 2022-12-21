@@ -5,21 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="../static/style.css" th:href="'/newStyle.css'">
+  <link rel="stylesheet" href="../static/newStyle.css" th:href="'/newStyle.css'">
 </head>
 <body>
 <h1>Varukorg</h1>
 <table>
 </tr>
 <tr th:each="snack : ${snacks}">
-  <td th:text="${snack.name}"></td>
+  <td th:text="${snack.product}"></td>
   <td th:text="${snack.snackPrice}"></td>
   </tr>
 </table>
 <table>
   </tr>
   <tr th:each="movie : ${movies}">
-    <td th:text="${movie.name}"></td>
+    <td th:text="${movie.title}"></td>
     <td th:text="${movie.price}"></td>
   </tr>
 </table>

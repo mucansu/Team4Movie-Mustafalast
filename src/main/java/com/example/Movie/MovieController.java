@@ -48,12 +48,10 @@ public class MovieController {
 
     @GetMapping("/cart")
     public String showShoppingCart(Model model) {
-        model.addAttribute("snacks", shoppingCart.getSnacks());
         model.addAttribute("movies", shoppingCart.getMovies());
+        model.addAttribute("snacks", shoppingCart.getSnacks());
         return "cart";
     }
-
-
     @PostMapping("/cart/addSnack")
     public String addSnackToCart(@RequestParam String product) {
         Snacks snack = repository2.getSnack(product);
