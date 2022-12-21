@@ -1,0 +1,104 @@
+img{
+  width: 120px;
+  height: 170px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  max-width: 500px;
+  margin: auto;
+  background: black;
+  padding: 10px 20px;
+}
+
+.poster{
+
+}
+.poster img{
+  width: 125px;
+  height: 175px;
+  border-radius: 3px;
+  transition: 0.5s
+}
+
+.poster img:hover{
+  -webkit-filter: brightness(45%);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+p,
+a,
+span{
+  color: antiquewhite;
+}
+
+h1,
+h2,
+h5{
+    color: antiquewhite;
+    padding-bottom: 10px;
+}
+
+.movieMenu{
+display: inline-block;
+text-align: center;
+padding: 2em;
+padding-bottom: 10px;
+}
+
+.candyMenu{
+display: block;
+border: solid;
+margin: auto;
+justify-content: center;
+
+overflow: hidden;
+text-align: center;
+margin-top: 2em;
+float: left;
+
+}
+
+
+p{
+  color: antiquewhite;
+}
+
+h2 {
+    color: antiquewhite;
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
+
+.Panel{
+width: fit-content;
+display: flex;
+border: solid;
+border-width: 0.2px;
+border-color: rgb(40, 40, 40);
+border-radius: 3px;
+background-image: linear-gradient(rgb(16, 16, 16),rgb(38, 38, 38));
+}
+
+p,
+a,
+span{
+  color: antiquewhite;
+}
+
+h1,
+h2,
+h5{
+    color: antiquewhite;
+    padding-bottom: 10px;
+}
+
+.description{
+padding-bottom: 2em;
+}
