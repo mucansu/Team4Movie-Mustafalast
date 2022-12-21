@@ -45,14 +45,16 @@ margin-top: 2em;
 float: left;
 }
 
-p{
-  color: antiquewhite;
-}
+
+p,
+a,
 span{
   color: antiquewhite;
 }
 
-h2 {
+h1,
+h2,
+h5{
     color: antiquewhite;
     padding-bottom: 10px;
 }
