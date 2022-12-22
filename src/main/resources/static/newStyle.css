@@ -38,9 +38,10 @@ span{
   color: antiquewhite;
 }
 
+
 h1,
 h2,
-h5{
+h4{
     color: antiquewhite;
     padding-bottom: 10px;
 }
@@ -64,18 +65,6 @@ margin-top: 2em;
 float: left;
 
 }
-
-
-p{
-  color: antiquewhite;
-}
-
-h2 {
-    color: antiquewhite;
-    padding-bottom: 10px;
-    padding-top: 30px;
-}
-
 .Panel{
 width: fit-content;
 display: flex;
@@ -86,19 +75,9 @@ border-radius: 3px;
 background-image: linear-gradient(rgb(16, 16, 16),rgb(38, 38, 38));
 }
 
-p,
-a,
-span{
-  color: antiquewhite;
-}
 
-h1,
-h2,
-h5{
-    color: antiquewhite;
-    padding-bottom: 10px;
-}
 
 .description{
 padding-bottom: 2em;
+}
 }
