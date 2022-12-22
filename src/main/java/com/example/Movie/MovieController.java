@@ -35,6 +35,7 @@ public class MovieController {
     String getmovie(Model model, @PathVariable String imageName){
         Movie movie = repository.getMovie(imageName);
         model.addAttribute("movie",movie);
+
         return "detailsMovie";
     }
 
@@ -42,6 +43,7 @@ public class MovieController {
     String getsnacks(Model model, @PathVariable String imageName){
         Snacks snack = repository2.getSnack(imageName);
         model.addAttribute("snack", snack);
+
         return "detailsSnacks";
     }
 
@@ -67,6 +69,7 @@ public class MovieController {
         System.out.println(movie.getTitle());
         return "redirect:/cart";
     }
+
 
 
 }

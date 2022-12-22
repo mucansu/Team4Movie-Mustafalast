@@ -10,18 +10,20 @@
 <body>
 <h1>Varukorg</h1>
 <table>
-<tr>
-<tr th:each="snack : ${snacks}">
-  <span><p th:text="${snack.product}"></p></span>
-  <span><p th:text="${snack.snackPrice}"></p></span>
+  <tr>
+  <tr th:each="snack : ${snacks}">
+    <img th:src="'/images/' + ${snack.imageName} ">
+    <span><p th:text="' Film: ' + ${snack.product}"></p></span>
+    <span><p th:text="' Pris: ' + ${snack.snackPrice} + ' Kronor.'"></p></span>
   </tr>
 </table>
 <table>
   <tr>
   <tr th:each="movie : ${movies}">
-   <span><p th:text="${movie.title}"></p></span>
-  <span><p th:text="${movie.price}">kronor.</p></span>
-</tr>
+    <img th:src="'/images/' + ${movie.imageName} ">
+    <span><p th:text="' Film: '+ ${movie.title}"></p></span>
+    <span><p th:text="' Pris: ' + ${movie.price} + ' Kronor.'"></p></span>
+  </tr>
   <a th:href="'/'"><button>startsida</button></a>
 </table>
 </body>

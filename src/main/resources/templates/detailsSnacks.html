@@ -8,16 +8,19 @@
     <link rel="stylesheet" href="../static/newStyle.css" th:href="'/newStyle.css'">
 </head>
 <body>
-
-<h1 th:text="${snack.product}"></h1>
-<img th:src="'/images/' + ${snack.imageName} ">
-<form method="post" action="/cart/addSnack">
-    <input type="hidden" th:value="${snack.product}" name="product">
-<input type="submit" value="Lägg till snack i varukorgen" >
-</form>
-<h4>Pris: <span th:text="${snack.snackPrice}"></span> Kronor.</h4>
-<h4>Beskrivning: </h4>
-<span th:text="${snack.description}"></span>
+<div>
+    <h1 th:text="${snack.product}"></h1>
+    <img th:src="'/images/' + ${snack.imageName} ">
+    <form method="post" action="/cart/addSnack">
+        <input type="hidden" th:value="${snack.product}" name="product">
+        <input type="submit" value="Lägg till i varukorgen" >
+        <a th:href="'/cart'"><button>Varukorg</button></a>
+    </form>
+    <br>
+    <span><b>Pris: </b></span><span th:text=" ${snack.snackPrice} + ' Kronor'"></span>
+    <h4><span th:text="'Beskrivning:'"></span></h4>
+    <span th:text="${snack.description}"></span>
+</div>
 <br>
 <br>
 <br>
@@ -26,6 +29,3 @@
 
 </body>
 </html>
-
-
-}

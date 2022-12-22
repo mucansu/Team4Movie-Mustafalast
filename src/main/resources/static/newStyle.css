@@ -32,20 +32,6 @@ body {
   transition: all 0.3s ease;
 }
 
-p,
-a,
-span{
-  color: antiquewhite;
-}
-
-
-h1,
-h2,
-h4{
-    color: antiquewhite;
-    padding-bottom: 10px;
-}
-
 .movieMenu{
 display: inline-block;
 text-align: center;
@@ -65,6 +51,7 @@ margin-top: 2em;
 float: left;
 
 }
+
 .Panel{
 width: fit-content;
 display: flex;
@@ -75,9 +62,70 @@ border-radius: 3px;
 background-image: linear-gradient(rgb(16, 16, 16),rgb(38, 38, 38));
 }
 
+p,
+a,
+span{
+  color: antiquewhite;
+}
 
+h1,
+h2,
+h5{
+    color: antiquewhite;
+    padding-bottom: 10px;
+}
 
 .description{
 padding-bottom: 2em;
 }
+
+input{
+    align-items: center;
+    background-image: linear-gradient(144deg,#1b1b1b, #151515 50%,#000000);
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color:antiquewhite;
+    font-size: 12px;
+    border-color: rgb(40, 40, 40);
+    justify-content: center;
+    line-height: 1em;
+    padding: 13px 24px;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
+
+  input:hover {
+    background-image: linear-gradient(144deg,rgb(36, 35, 35), #282828 50%,#2b2b2b);
+  }
+
+  input:active {
+    background-image: linear-gradient(144deg,#1b1b1b, #151515 50%,#000000);
+  }
+button{
+    align-items: center;
+    background-image: linear-gradient(144deg,rgb(36, 35, 35), #282828 50%,#2b2b2b);
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color:antiquewhite;
+    font-size: 12px;
+    border-color: rgb(40, 40, 40);
+    justify-content: center;
+    line-height: 1em;
+    padding: 13px 24px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+  button:hover {
+    background-image: linear-gradient(144deg,#1b1b1b, #151515 50%,#000000);
+  }
+
+  button:active {
+    background-image: linear-gradient(144deg,rgb(36, 35, 35), #282828 50%,#2b2b2b);
+  }

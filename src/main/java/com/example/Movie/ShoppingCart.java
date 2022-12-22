@@ -30,4 +30,5 @@ public class ShoppingCart {
     public List<Movie> getMovies() {
         return cartMovies;
     }
+
 }

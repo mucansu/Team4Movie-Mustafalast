@@ -9,16 +9,17 @@
 </head>
 <body>
 <div>
-<h1 th:text="${movie.title}"></h1>
-<img th:src="'/images/' + ${movie.imageName} ">
+    <h1 th:text="${movie.title}"></h1>
+    <img th:src="'/images/' + ${movie.imageName} ">
     <form action="/cart/addMovie" method="post">
         <input type="hidden" th:value="${movie.title}" name="title">
-    <input type="submit" value="Lägg till film i varukorgen">
+        <input type="submit" value="Lägg till i varukorgen">
+        <a th:href="'/cart'"><button>Varukorg</button></a>
     </form>
     <br>
-<span>Pris: </span><span th:text=" ${movie.price} + ' Kronor'"></span>
+    <span><b>Pris: </b></span><span th:text=" ${movie.price} + ' Kronor'"></span>
     <h4><span th:text="'Beskrivning:'"></span></h4>
-<span th:text="${movie.description}"></span>
+    <span th:text="${movie.description}"></span>
 </div>
 <br>
 <br>
