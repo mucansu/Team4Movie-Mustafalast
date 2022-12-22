@@ -24,6 +24,9 @@
     <span><p th:text="' Film: '+ ${movie.title}"></p></span>
     <span><p th:text="' Pris: ' + ${movie.price} + ' Kronor.'"></p></span>
   </tr>
+
+    <p th:text="${totalPrice}"></p>
+
   <a th:href="'/'"><button>startsida</button></a>
 </table>
 </body>

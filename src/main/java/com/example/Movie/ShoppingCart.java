@@ -30,5 +30,17 @@ public class ShoppingCart {
     public List<Movie> getMovies() {
         return cartMovies;
     }
+    public int getTotalPrice() {
+        int totalPrice = 0;
+        for (Movie movie : cartMovies) {
+            if (cartMovies.contains(movie)) {
+                totalPrice += movie.getPrice();
+            }
+        }
+
+    return
+            totalPrice;
+    }
+
 
 }

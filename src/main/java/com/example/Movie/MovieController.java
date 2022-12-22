@@ -35,6 +35,7 @@ public class MovieController {
     String getmovie(Model model, @PathVariable String imageName){
         Movie movie = repository.getMovie(imageName);
         model.addAttribute("movie",movie);
+        model.addAttribute("price",movie.getPrice());
 
         return "detailsMovie";
     }
@@ -43,6 +44,8 @@ public class MovieController {
     String getsnacks(Model model, @PathVariable String imageName){
         Snacks snack = repository2.getSnack(imageName);
         model.addAttribute("snack", snack);
+        model.addAttribute("snackPrice", snack.getSnackPrice());
+
 
         return "detailsSnacks";
     }
@@ -52,6 +55,7 @@ public class MovieController {
     public String showShoppingCart(Model model) {
         model.addAttribute("movies", shoppingCart.getMovies());
         model.addAttribute("snacks", shoppingCart.getSnacks());
+        model.addAttribute("totalPrice",shoppingCart.getTotalPrice());
         return "cart";
     }
     @PostMapping("/cart/addSnack")
