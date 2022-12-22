@@ -25,7 +25,7 @@
     <span><p th:text="' Pris: ' + ${movie.price} + ' Kronor.'"></p></span>
   </tr>
 
-    <p th:text="${totalPrice}"></p>
+  <span><p style="color:red" th:text=" 'Total summa : ' + ${totalPrice} + ' Kronor'"></p></span>
 
   <a th:href="'/'"><button>startsida</button></a>
 </table>
