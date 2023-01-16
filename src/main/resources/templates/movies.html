@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<h2 th:text="${pageTitle}" class="tableTitle">På bio just nu</h2>
+
+<table th:if="${helper}" class="btnTbl">
+    <tbody>
+    <tr scope ="row">
+        <td><a href="/movies?current=true"><button type="button" class="btn btn-dark">Alla</button></a></td>
+        <td><a href="/movies?current=true&sortBy=action"><button type="button" class="btn btn-dark">Action</button></a></td>
+        <td><a href="/movies?current=true&sortBy=komedi"><button type="button" class="btn btn-dark">Komedi</button></a></td>
+        <td><a href="/movies?current=true&sortBy=scifi"><button type="button" class="btn btn-dark">Science Fiction</button></a></td>
+        <td><a href="/movies?current=true&sortBy=barn"><button type="button" class="btn btn-dark">Barn</button></a></td>
+    </tr>
+    </tbody>
+</table>
+
+<table th:if="${!helper}" class="btnTbl">
+    <tbody>
+    <tr scope ="row">
+        <td><a href="/movies?current=false"><button type="button" class="btn btn-dark">Alla</button></a></td>
+        <td><a href="/movies?current=false&sortBy=action"><button type="button" class="btn btn-dark">Action</button></a></td>
+        <td><a href="/movies?current=false&sortBy=komedi"><button type="button" class="btn btn-dark">Komedi</button></a></td>
+        <td><a href="/movies?current=false&sortBy=scifi"><button type="button" class="btn btn-dark">Science Fiction</button></a></td>
+        <td><a href="/movies?current=false&sortBy=barn"><button type="button" class="btn btn-dark">Barn</button></a></td>
+    </tr>
+    </tbody>
+</table>
+
+<table class="table table-striped table-dark align-middle container">
+
+    <thead>
+    <tr>
+        <th scope="col"></th>
+        <th scope="col">Titel</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Releasedatum</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr scope ="row" th:each="movie : ${movieList}">
+        <td><a th:href="'/movies/'+ ${movie.id}"><img th:src="'/images/' + ${movie.imageName}"></a></td>
+        <td class="movieTitle" th:text="${movie.title}"></td>
+        <td th:text="${movie.genre.displayGenre}"></td>
+        <td style="color: #00ffbf"  class="premiere" th:if="${movie.release} == ${today}">Premiär idag!</td>
+        <td th:if="${movie.release} != ${today}" th:text="${movie.release}"></td>
+        <td>
+<!--            <form action="purchases/addToCart" th:value="${movie}" method="POST">-->
+<!--            </form>-->
+                <a th:href="'/purchases/addToCart/?type=movie&id=' + ${movie.id}"><button type="button" class="btn btn-success">Köp biljett</button></a>
+        </td>
+
+    </tr>
+    </tbody>
+
+</table>
+<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    <a th:href="'/homePage'"><button>Startsida</button></a>
+</div>
+
+</body>
+
+

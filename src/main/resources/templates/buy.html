@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<h2 class="tableTitle">sdgsdgsdgsdg</h2>
+
+
+<div class="container">
+
+<!--  <form action="/purchases/buy" th:object="${purchase}" method="POST">-->
+
+  <form action="/purchases/buy" th:value="${movie}" method="POST">
+
+    <input th:value="${movie.id}" th:name="id" type="text">
+    <input th:value="${purchase.movie}" type="text">
+
+    <button type="submit" class="btn btn-success">Köp</button>
+
+  </form>
+</div>
+
+</body>

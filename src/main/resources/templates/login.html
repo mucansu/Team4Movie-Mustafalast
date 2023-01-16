@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<h2 class="tableTitle">Customer form</h2>
+
+<div class="container">
+  <form action="/customers/add" th:object="${customer}" method="POST">
+
+    <p th:errors="*{firstName}" class="errorMsg"></p>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <input th:field="*{firstName}" type="text" class="form-control"
+               placeholder="Förnamn" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Förnamn'">
+      </div>
+
+      <br>
+
+      <p th:errors="*{lastName}" class="errorMsg"></p>
+      <div class="form-group col-md-4">
+        <input th:field="*{lastName}" type="text" class="form-control"
+               placeholder="Efternamn" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Efternamn'">
+      </div>
+    </div>
+
+    <br>
+
+    <p th:errors="*{email}" class="errorMsg"></p>
+    <div class="form-group col-md-4">
+      <input th:field="*{email}" type="text" class="form-control"
+             placeholder="E-postadress" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-postadress'">
+    </div>
+    <br>
+
+    <input th:field="*{id}" th:if="${id != null}" type="hidden">
+    <br>
+    <button type="submit" class="btn btn-success">Registrera</button>
+
+  </form>
+</div>
+
+</body>

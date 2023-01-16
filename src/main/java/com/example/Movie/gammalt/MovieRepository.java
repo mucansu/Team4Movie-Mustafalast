@@ -1,0 +1,33 @@
+package com.example.Movie.gammalt;
+
+import com.example.Movie.Movie;
+import com.example.movie.models.Movie;
+import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Repository
+public class MovieRepository {
+
+    private List<Movie> movies;
+
+    public MovieRepository(){
+        movies = new ArrayList<>();
+        movies.add(new Movie("Avatar", 150, "Sci-Fi", "avatar.jpg", "En före detta marinkårssoldat blir förälskad i en blåhyad krigare på en främmande planet. Han ställer sig på hennes folks sida i deras kamp mot människans övergrepp på deras frodiga planet."));
+        movies.add(new Movie("Bamse och vulkanön", 109, "Kids", "bamse.jpg", "Just som allt verkar vara lugnt och skönt hemma hos Bamse och hans vänner kommer ett nödanrop från Skalmans gamla forskarkollega, biologen Beanka, som mystiskt verkar ha försvunnit på en forskningsresa."));
+        movies.add(new Movie("Black Adam", 159, "Action", "blackadam.jpg", "Nära 5000 år efter att han tilldelats de forntida gudarnas allsmäktiga krafter - och fängslats lika snabbt - blir Black Adam befriad, redo att släppa lös sin egen form av rättvisa i den moderna världen."));
+    }
+
+
+    public Movie getMovie(String title){
+        for (Movie movie : movies) {
+            if (movie.getTitle().equals(title) ) {
+                return movie;        }
+        }    return null;
+    }
+
+    public List<Movie> getMovies() {
+        return movies;
+    }
+}

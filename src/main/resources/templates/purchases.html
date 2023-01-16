@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<h2 class="tableTitle">Varukorg</h2>
+
+<p class="container" th:unless="${purchaseList} and ${purchaseList.size()}">Varukorgen är tom :(</p>
+
+
+<table th:if="${purchaseList} and ${purchaseList.size()}" class="table table-striped table-dark container">
+
+<!--    DET HÄR HANN VI INTE:-->
+
+<!--    SELECT COUNT(Movie_ID), Movie.Title-->
+<!--    FROM Purchase-->
+<!--    JOIN Movie-->
+<!--    ON (Purchase.Movie_Id=Movie.Id)-->
+<!--    GROUP BY MOVIE_ID-->
+
+
+    <thead>
+    <tr>
+        <th></th>
+        <th>Produktnamn</th>
+        <th>Pris</th>
+    </thead>
+
+    <tbody>
+    <tr th:each="purchase : ${purchaseList}">
+
+<!--        Movie purchases-->
+
+        <td th:if="${purchase.movie != null}">
+            <img th:src="'/images/' + ${purchase.movie.imageName}">
+        </td>
+
+        <td th:if="${purchase.movie != null}">
+            <span th:text="${purchase.movie.title}"></span>
+        </td>
+        <td th:if="${purchase.movie != null}">
+            <span th:text="${purchase.movie.price + ' kr'}"></span>
+        </td>
+
+<!--        Snack purchases-->
+
+        <td th:if="${purchase.snack != null}">
+            <img th:src="'/images/' + ${purchase.snack.imageName}">
+        </td>
+
+        <td th:if="${purchase.snack != null}">
+            <span th:text="${purchase.snack.name}"></span>
+        </td>
+
+        <td th:if="${purchase.snack != null}">
+            <span th:text="${purchase.snack.price} + ' kr'"></span>
+        </td>
+
+        <tr>
+        <td></td>
+        <td></td>
+        <td style="color: #00ffbf" th:text="'Total kostnad: ' + ${total} + ' kr'"></td>
+        </tr>
+
+    </tr>
+    </tbody>
+</table>
+<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    <a th:href="'/homePage'"><button>Startsida</button></a>
+</div>
+</body>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<h2 class="tableTitle" th:text="${snack.name}"></h2>
+
+<table class="table table-striped table-dark align-middle container">
+
+  <thead>
+  <tr>
+    <th></th>
+    <th>Snack</th>
+    <th>Price</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <td><img th:src="'/images/' + ${snack.imageName}"></td>
+  <td class="movieTitle" th:text="${snack.name}"></td>
+  <td th:text="${snack.price}"></td>
+  <td th:text="${snack.description}"></td>
+
+
+  <td>
+    <a th:href="'/purchases/addToCart/?type=snack&id=' + ${snack.id}"><button type="button" class="btn btn-success">Köp snack</button></a>
+  </td>
+
+  </tr>
+  </tbody>
+
+</table>
+<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+  <a th:href="'/homePage'"><button class="startSida">Startsida</button></a>
+</div>
+</body>
+</html>
